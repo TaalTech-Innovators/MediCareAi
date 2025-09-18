@@ -18,4 +18,4 @@ while True:
     if attempts==10:
         print(f"Sorry, you've used all your attempts. The number was {guess}.")
         break
-    
+    #try this and enjoy yourself
