@@ -1,5 +1,7 @@
+import argparse
 import pandas as pd
 import joblib
+import config
 
 # -----------------------------
 # 1. Load model and symptoms
