@@ -11,6 +11,8 @@ le = joblib.load(config.MODELS_DIR / "label_encoder.joblib")
 
 df = load_data(input_file)
 if config.TARGET_COLUMN in df.columns:
+ df = df.drop(columns=[config.TARGET_COLUMN])
+
 
 
 
