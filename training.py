@@ -12,3 +12,6 @@ X = train_df.drop(columns=["prognosis"])
 y = train_df["prognosis"]
 
 print(" Training Random Forest model...")
+
+clf = RandomForestClassifier(n_estimators=100, random_state=42)
+clf.fit(X, y)
