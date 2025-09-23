@@ -10,3 +10,4 @@ def main(model_path, test_file): #by Angela
 model = load_model(model_path)  #by Angela
 le = joblib.load(config.MODELS_DIR / "label_encoder.joblib") #by Angela
 df = load_data(test_file, config.TARGET_COLUMN) #by kamo
+X_test = df.drop(columns = [config.TARGET_COLUMN]) #by Angela
