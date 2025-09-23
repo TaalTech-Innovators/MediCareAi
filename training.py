@@ -15,3 +15,7 @@ print(" Training Random Forest model...")
 
 clf = RandomForestClassifier(n_estimators=100, random_state=42)
 clf.fit(X, y)
+
+scores =cross_val_score(clf, X,y,cv=5)
+print(f"Cross-validation Accuracy: {scores.mean():.4f}")
+
