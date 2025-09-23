@@ -7,7 +7,7 @@ from tabulate import tabulate
 
 
 def main(model_path, input_file, output_file):
-    model = load_model(model_path)
+ model = load_model(model_path)
 le = joblib.load(config.MODELS_DIR / "label_encoder.joblib")
 
 df = load_data(input_file)
@@ -16,8 +16,10 @@ if config.TARGET_COLUMN in df.columns:
 
  y_pred = model.predict(df)
  y_labels = le.inverse_transform(y_pred)
+
 results = df.copy()
 results["prediction"] = y_labels
+results.to_csv(output_file, index=False)
 
 
 
