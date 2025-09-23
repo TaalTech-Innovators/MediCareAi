@@ -15,9 +15,8 @@ if config.TARGET_COLUMN in df.columns:
 
  y_pred = model.predict(df)
  y_labels = le.inverse_transform(y_pred)
-
- results = df.copy()
- results["prediction"] = y_labels
+results = df.copy()
+results["prediction"] = y_labels
 
 
 
