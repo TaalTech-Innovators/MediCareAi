@@ -13,3 +13,4 @@ df = load_data(test_file, config.TARGET_COLUMN) #by kamo
 X_test = df.drop(columns = [config.TARGET_COLUMN]) #by Angela
 y_test = le.transform(df[config.TARGET_COLUMN].astype(str)) #by Kgotso
 y_pred = model.predict(X_test) #by kamo
+print("Test Accuracy: ",accuracy_score(y_true, y_pred)) # by Angela
