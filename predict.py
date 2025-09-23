@@ -21,3 +21,5 @@ results["prediction"] = y_labels
 results.to_csv(output_file, index=False)
 print(f"✅ Predictions saved to {output_file}")
 
+if _name_ == "_main_":
+parser = argparse.ArgumentParser()
