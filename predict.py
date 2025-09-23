@@ -23,3 +23,4 @@ print(f"✅ Predictions saved to {output_file}")
 
 if _name_ == "_main_":
 parser = argparse.ArgumentParser()
+parser.add_argument("--model", type=str, default=config.MODELS_DIR / "model.joblib")
