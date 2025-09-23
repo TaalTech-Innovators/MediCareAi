@@ -19,8 +19,5 @@ if config.TARGET_COLUMN in df.columns:
 results = df.copy()
 results["prediction"] = y_labels
 results.to_csv(output_file, index=False)
-
-
-
-
+print(f"✅ Predictions saved to {output_file}")
 
