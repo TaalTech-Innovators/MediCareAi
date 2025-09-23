@@ -25,4 +25,6 @@ if _name_ == "_main_":
 parser = argparse.ArgumentParser()
 parser.add_argument("--model", type=str, default=config.MODELS_DIR / "model.joblib")
  parser.add_argument("--input", type=str, required=True)   
- parser.add_argument("--output", type=str, default="predictions.csv")                
+ parser.add_argument("--output", type=str, default="predictions.csv") 
+ args = parser.parse_args()              
+  
