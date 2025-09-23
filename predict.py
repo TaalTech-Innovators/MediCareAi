@@ -13,6 +13,9 @@ df = load_data(input_file)
 if config.TARGET_COLUMN in df.columns:
  df = df.drop(columns=[config.TARGET_COLUMN])
 
+ y_pred = model.predict(df)
+ y_labels = le.inverse_transform(y_pred)
+
 
 
 
