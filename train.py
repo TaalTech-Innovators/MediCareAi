@@ -13,4 +13,4 @@ train_df = train_df.loc[:, ~train_df.columns.str.contains("^Unnamed")] #by Shiva
 X=train_df.drop(columns=["prognosis"]) #by Shivambu17
 y=train_df["prognosis"] #by Shivambu17
 
-
+print(" Training Random Forest model...")
