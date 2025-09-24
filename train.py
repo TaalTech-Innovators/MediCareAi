@@ -15,3 +15,4 @@ y=train_df["prognosis"] #by Shivambu17
 
 print(" Training Random Forest model...")
 clf = RandomForestClassifier()
+clf.fit(X, y)
