@@ -14,3 +14,4 @@ X=train_df.drop(columns=["prognosis"]) #by Shivambu17
 y=train_df["prognosis"] #by Shivambu17
 
 print(" Training Random Forest model...")
+clf = RandomForestClassifier()
