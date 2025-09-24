@@ -15,3 +15,4 @@ y_true = le.transform(df[config.TARGET_COLUMN].astype(str)) #by Kgotso
 y_pred = model.predict(X_test) #by kamo
 print("Test Accuracy: ",accuracy_score(y_true, y_pred)) # by Angela
 print(classification_report(y_true, y_pred, target_names=le.classes_)) #by Kgotso
+print("Confusion matrix shape:", confusion_matrix(y_true, y_pred).shape)  # Kamo
