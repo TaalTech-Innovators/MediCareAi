@@ -16,3 +16,9 @@ y=train_df["prognosis"] #by Shivambu17
 print(" Training Random Forest model...")
 clf = RandomForestClassifier()
 clf.fit(X, y)
+
+scores = cross_val_score(clf, X, y, cv=5)
+print(f" Cross-validation Accuracy: {scores.mean():.4f}")
+
+joblib.dump(clf, "disease_model.pkl")
+print(" Model saved as disease_model.pkl")
