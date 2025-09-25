@@ -6,26 +6,27 @@ import matplotlib.pyplot as plt
 from tabulate import tabulate
 
 
-def main(model_path, input_file, output_file):
- model = load_model(model_path)
-le = joblib.load(config.MODELS_DIR / "label_encoder.joblib")
+clf = joblib.load("disease_model.pkl")
 
-df = load_data(input_file)
-if config.TARGET_COLUMN in df.columns:
- df = df.drop(columns=[config.TARGET_COLUMN])
+train_df = pd.read_csv("Training.csv")
+train_df = train_df.loc[:, ~train_df.columns.str.contains("^Unnamed")]
+symptoms = list(train_df.drop(columns=["prognosis"]).columns)
 
- y_pred = model.predict(df)
- y_labels = le.inverse_transform(y_pred)
 
-results = df.copy()
-results["prediction"] = y_labels
-results.to_csv(output_file, index=False)
-print(f"✅ Predictions saved to {output_file}")
+num_symptoms = 5  
+user_symptoms = random.sample(symptoms, num_symptoms)
 
-if _name_ == "_main_":
-parser = argparse.ArgumentParser()
-parser.add_argument("--model", type=str, default=config.MODELS_DIR / "model.joblib")
- parser.add_argument("--input", type=str, required=True)   
- parser.add_argument("--output", type=str, default="predictions.csv") 
- args = parser.parser_args()  
- main(args.model, args.input, args.output)             
+print("\nRandomly selected symptoms:", ", ".join(user_symptoms))
+
+input_data = [1 if symptom in user_symptoms else 0 for symptom in symptoms]
+
+probs = clf.predict_proba([input_data])[0]
+disease_classes = clf.classes_
+
+sorted_indices = probs.argsort()[::-1]
+top3 = [(disease_classes[i], probs[i]) for i in sorted_indices[:3]]
+
+print("\n Predicted Disease (Most Likely):", top3[0][0])
+print("\n Top 3 Predictions:")
+for disease, prob in top3:
+    print(f" - {disease}: {prob*100:.2f}%")
