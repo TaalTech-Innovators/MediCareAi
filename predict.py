@@ -19,7 +19,7 @@ symptoms = list(train_df.drop(columns=["prognosis"]).columns)
 # Randomly pick 5 to 10 symptoms
 selected_symptoms = random.sample(symptoms, k=random.randint(5, 10))
 
-print("🧪 Randomly Selected Symptoms for Prediction:")
+print(" Randomly Selected Symptoms for Prediction:")
 print(", ".join(selected_symptoms))
 
 # -----------------------------
@@ -38,8 +38,8 @@ sorted_indices = probs.argsort()[::-1]
 top5 = [(disease_classes[i], probs[i]) for i in sorted_indices[:5]]
 
 # Display top 3
-print("\n🎯 Predicted Disease (Most Likely):", top5[0][0])
-print("\n📊 Top 5 Predictions (with probabilities):\n")
+print("\n Predicted Disease (Most Likely):", top5[0][0])
+print("\n Top 5 Predictions (with probabilities):\n")
 print(tabulate(
     [(disease, f"{prob*100:.2f}%") for disease, prob in top5],
     headers=["Disease", "Probability"],
@@ -59,4 +59,4 @@ plt.xlabel("Probability (%)")
 plt.title("Top 5 Disease Predictions")
 plt.tight_layout()
 plt.savefig("disease_prediction.png")
-print("\n📈 Prediction bar chart saved as 'disease_prediction.png'")
+print("\n Prediction bar chart saved as 'disease_prediction.png'")

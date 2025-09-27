@@ -7,7 +7,7 @@ import joblib
 # -----------------------------
 # 1. Load Data
 # -----------------------------
-print("📥 Loading training data...")
+print(" Loading training data...")
 train_df = pd.read_csv("Training.csv")
 train_df = train_df.loc[:, ~train_df.columns.str.contains("^Unnamed")]
 
@@ -17,18 +17,18 @@ y = train_df["prognosis"]
 # -----------------------------
 # 2. Train Model
 # -----------------------------
-print("🚀 Training Random Forest model...")
+print(" Training Random Forest model...")
 clf = RandomForestClassifier(n_estimators=100, random_state=42)
 clf.fit(X, y)
 
 # -----------------------------
 # 3. Cross-validation
 # -----------------------------
-print("📊 Performing cross-validation...")
+print(" Performing cross-validation...")
 scores = cross_val_score(clf, X, y, cv=5)
 
-print("\n✅ Cross-validation scores:", scores)
-print(f"🎯 Average Accuracy: {scores.mean():.4f}")
+print("\n Cross-validation scores:", scores)
+print(f" Average Accuracy: {scores.mean():.4f}")
 
 # Plot accuracy scores
 plt.figure(figsize=(7, 4))
@@ -39,10 +39,10 @@ plt.ylabel("Accuracy")
 plt.grid(True)
 plt.tight_layout()
 plt.savefig("cross_validation_accuracy.png")
-print("📈 Cross-validation plot saved as 'cross_validation_accuracy.png'")
+print(" Cross-validation plot saved as 'cross_validation_accuracy.png'")
 
 # -----------------------------
 # 4. Save Model
 # -----------------------------
 joblib.dump(clf, "disease_model.pkl")
-print("💾 Model saved as 'disease_model.pkl'")
+print(" Model saved as 'disease_model.pkl'")
