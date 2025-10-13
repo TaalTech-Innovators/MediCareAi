@@ -40,3 +40,35 @@ python test_model.py
 
 5. Predict diseases using:
 python predict.py
+
+
+___________________________________________________________________________________________
+
+## 📈 Features
+
+1. Predicts top 3 likely diseases based on symptoms
+2. 90–95% accuracy after training
+3. Fast, scalable, and easy to use
+4. Includes confusion matrix and cross-validation
+
+_____________________________________________________________________________________________
+
+## 👥 Team TaalTech
+
+K Rakosa (Group Leader)
+KAM Molamu
+S Shivambu
+A Nobela
+K Mbokane
+M Letsoalo
+V Maahlo
+VB Van Wyk
+NT Madau
+B Leshilo
+
+______________________________________________________________________________________________
+
+## 🙌 Credits
+
+Dataset: Disease Prediction Using Machine Learning (Kaggle)
+Tutorials: TutorialsPoint – Machine Learning with Python
