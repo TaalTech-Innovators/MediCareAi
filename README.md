@@ -55,20 +55,20 @@ ________________________________________________________________________________
 
 ## 👥 Team TaalTech
 
-K Rakosa (Group Leader)
-KAM Molamu
-S Shivambu
-A Nobela
-K Mbokane
-M Letsoalo
-V Maahlo
-VB Van Wyk
-NT Madau
-B Leshilo
+- K Rakosa (Group Leader)
+- KAM Molamu
+- S Shivambu
+- A Nobela
+- K Mbokane
+- M Letsoalo
+- V Maahlo
+- VB Van Wyk
+- NT Madau
+- B Leshilo
 
 ______________________________________________________________________________________________
 
 ## 🙌 Credits
 
-Dataset: Disease Prediction Using Machine Learning (Kaggle)
-Tutorials: TutorialsPoint – Machine Learning with Python
+- Dataset: Disease Prediction Using Machine Learning (Kaggle)
+- Tutorials: TutorialsPoint – Machine Learning with Python
